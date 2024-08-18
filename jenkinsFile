@@ -3,7 +3,9 @@ pipeline {
     environment {
         VERSION = '2.1.0'
         RELEASE_VERSION = 'R.2'
+    
     }
+    // Simple stage implementation
     stages {
         stage('Audit tools') {
             steps {
@@ -17,7 +19,7 @@ pipeline {
 
         stage('Unit Test') {
             steps {
-                dir('./java-tomcat-sample') {
+                dir('./test-wb') {
                     sh '''
                         echo "Executing Unit Tests..."
                         mvn test
