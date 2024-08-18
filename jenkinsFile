@@ -27,7 +27,7 @@ pipeline {
 
         stage('Unit Test') {
             steps {
-                dir('./test-wb') {
+                dir('./') {
                     sh '''
                         echo "Executing Unit Tests..."
                         mvn test
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo "Building version: ${VERSION} with suffix: ${RELEASE_VERSION}"
                 echo 'Mention your Application Build Code here!!!'
-                dir('./test-wb') {
+                dir('./') {
                         sh '''
                             mvn versions:set -DnewVersion="${VERSION}"-SNAPSHOT
                             mvn versions:update-child-modules
