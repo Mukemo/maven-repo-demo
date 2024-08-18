@@ -13,6 +13,14 @@ pipeline {
                   git version
                   java -version
                   mvn -version
+                  echo '-----------------list of file -----------------------'  
+                  ls
+                  echo '-----------------end of list of file -----------------------'
+
+                  echo '--------- path ----------'
+                  pwd
+                  echo '--------- end path --------'
+
                 '''
             }
         }
