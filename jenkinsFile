@@ -27,12 +27,12 @@ pipeline {
 
         stage('Unit Test') {
             steps {
-                dir('./') {
+                // dir('scripts') {
                     sh '''
                         echo "Executing Unit Tests..."
                         mvn test
                     '''
-                }
+                // }
             }
         }
 
@@ -40,13 +40,13 @@ pipeline {
             steps {
                 echo "Building version: ${VERSION} with suffix: ${RELEASE_VERSION}"
                 echo 'Mention your Application Build Code here!!!'
-                dir('./') {
-                        sh '''
-                            mvn versions:set -DnewVersion="${VERSION}"-SNAPSHOT
-                            mvn versions:update-child-modules
-                            mvn clean package
-                        '''
-                    }
+                // dir('./') {
+                sh '''
+                    mvn versions:set -DnewVersion="${VERSION}"-SNAPSHOT
+                    mvn versions:update-child-modules
+                    mvn clean package
+                '''
+                    // }
             }
         }
     }
