@@ -1,5 +1,5 @@
 library identifier: 'JenkinsShardLibrary@main', 
-        retriver: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/Mukemo/JenkinsShardLibrary.git'])
+        retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/Mukemo/JenkinsShardLibrary.git'])
 
 pipeline {
     agent any
